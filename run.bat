@@ -1,0 +1,1 @@
+start /wait "pm2 start index.js"
