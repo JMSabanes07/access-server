@@ -1,5 +1,5 @@
 {
-  "databaseLocation": "C:/Users/el_sa/Desktop/database/dbnueva.accdb",
+  "databaseIp": "192.168.1.xxx",
   "imagesLocation": "C:/Users/el_sa/Desktop/images",
   "port": 5959
 }
