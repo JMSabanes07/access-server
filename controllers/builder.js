@@ -1,9 +1,7 @@
-const AccessConnection = require('../libs/dbconnaccess')
+const sql = require('../libs/dbconnsqlserver')
 
 const builder = async req =>
   new Promise(async (resolve, reject) => {
-    const db = new AccessConnection()
-
     const queryProducts = `
         SELECT 
           Ar_Id AS id, 
@@ -20,7 +18,7 @@ const builder = async req =>
         WHERE 
           (Ar_Id = Ar_Id_Config AND Ar_Id = Ar_Id_Data)
         AND 
-          Ar_Estado = true
+          Ar_Estado = 1
         AND 
           TI_TipIva = Ar_Config_TipoIva
         AND
@@ -36,8 +34,8 @@ const builder = async req =>
           EstadoSubRubro = 'ACTIVO';`
 
     try {
-      const dataProducts = await db.query(queryProducts)
-      const dataCollections = await db.query(queryCollections)
+      const dataProducts = await sql.execute(queryProducts)
+      const dataCollections = await sql.execute(queryCollections)
       resolve({
         collections: dataCollections,
         products: dataProducts,
