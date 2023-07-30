@@ -5,7 +5,7 @@ const config = {
   user: 'Sebastian',
   password: 'poolbola8',
   server: '192.168.1.20', // Puede ser una dirección IP o un nombre de servidor
-  database: 'SABATECHNO SOFTWARE V1SQL',
+  database: 'BDSQLSERVER',
   options: {
     encrypt: false, // Establecer a true si estás utilizando una conexión segura (por ejemplo, con Azure)
   },
